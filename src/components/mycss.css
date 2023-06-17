@@ -108,7 +108,7 @@ transition: background 0.1s ease-in-out;
 
 
 
-.btm {
+.btn {
 text-align: center;
 border-radius: 25px;
 border: #262942;
@@ -121,17 +121,17 @@ box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
 transition: background 0.1s ease-in-out;
 }
 
-.btm:hover {
+.btn:hover {
 background: #555b96;
 }
 
-.btm:active {
+.btn:active {
   box-shadow: 5px 5px 10px 2.5px rgba(0, 0, 0, 0.2),
           -5px -5px 10px 2.5px rgba(77, 71, 100, 0.3),
           -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
           background: #3a3842;
 }
 
-.btm:active .wordd {
+.btn:active .wordd {
   border-width: 0 6px 6px 0;
 }
