@@ -20,20 +20,24 @@ const Login = () => {
   return (
     <>
     <Container className='loginbox'>
-      <Card>
-        <Card.Body>
-          <Card.Title>Login</Card.Title>
-          <Form>
-          <Stack gap={3} className="col-md-5 mx-auto">
+      
+      <Card className='screen'>
+        
+        <Card.Body className='screen_content'>
+          <Form className='login'>  
+      
             <input type='text' ></input>
             <input type='password'></input> 
-            <Button type='button' variant={isButtonDisabled} onClick={handleClick} size='lg' >login</Button>
+            <Button type='button' className='box btm' variant={isButtonDisabled} onClick={handleClick} >login</Button>
             <Alert variant='success' hidden={isAlertHidden}> Login Success </Alert>
-            </Stack>  
           </Form>
         </Card.Body>
       </Card>
+      <div class="line_bar"></div>
+        <p>&#160;&#160;Neumorphism in Action&#160;&#160;</p>
+  
     </Container>
+    
     </>
   );
 };
