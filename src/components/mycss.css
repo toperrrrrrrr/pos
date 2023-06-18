@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+
+:root {
+--dark1: #0D0E1C;
+--dark2: #262942;
+}
+
+
+/* ALL */
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;	
 	font-family: Raleway, sans-serif;
 }
+/* Background */
 body {
-	background: linear-gradient(180deg, #0D0E1C, #262942);		
+	background: linear-gradient(180deg,var(--dark1),var(--dark2));		
 }
+
+
 
 .login{
     z-index: 10;
@@ -16,7 +27,6 @@ body {
 }
 
 .loginbox {
- 
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,7 +38,6 @@ body {
 	position: relative;	
 	height: 600px;
 	width: 360px;	
-    
 	box-shadow: 0px 0px 24px #0D0E1C; 
 }
 
@@ -37,54 +46,30 @@ body {
 	height: 100%;
 }
 
-
-
-p {
-    position: absolute;
-    font: 700 20px Arial;
-    color:#494653;
-    bottom: 30px;
-    margin: 0 auto;
-    background: #262942;
-    user-select: none;
-    transition: all 0.5s ease-in-out;
-  }
-
-  p:hover {
-    color: 	#79758a;
-    text-shadow: 0px 0px 25px rgba(89, 83, 116, 0.5);
-  }
-
-  
 input {
-    
     width: inherit;
     height: 50px;
     background: #262942;
     color: white;
-     
     border-radius: 25px;
     margin-top: 10px;
     text-align:justify;
     padding-left: 15px;
-     border: none;
-     
-     box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
-             inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
-             inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4);
-     transition: all 0.3s ease-in-out;
-   
+    border: none;
+    box-shadow:inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
+                inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4);
+    transition: all 0.3s ease-in-out;
    }
    
-   input:focus
-    {
-       outline: none;
-      box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
-             inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
-             inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4),
-             5px 5px 10px 2.5px rgba(0, 0, 0, 0.2),
-             -5px -5px 10px 2.5px rgba(77, 71, 100, 0.4),
-             -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
+   input:focus {
+    outline: none;
+    box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
+            inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
+            inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4),
+            5px 5px 10px 2.5px rgba(0, 0, 0, 0.2),
+            -5px -5px 10px 2.5px rgba(77, 71, 100, 0.4),
+            -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
    }
 
 
