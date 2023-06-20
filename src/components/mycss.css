@@ -26,19 +26,24 @@ body {
     width: 100%;
 }
 
-.loginbox {
+.login-bg {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 }
 
-.screen {		
-	background: #262942;		
-	position: relative;	
-	height: 600px;
-	width: 360px;	
-	box-shadow: 0px 0px 24px #0D0E1C; 
+.login-box {		
+    background: #262942;		
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
 }
 
 .screen__content {
