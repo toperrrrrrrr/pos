@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Alert } from 'react-bootstrap';
 import './mycss.css'
 import Logo from '../img/Logo.svg'
+import bg from '../img/bg.svg'
 
 const Login = () => {
   const [isButtonDisabled, setButtonDisabled] = useState('primary');
@@ -20,23 +21,25 @@ const Login = () => {
 
   return (
     <>
-    
-
     <div className='login-bg'>
-    <img src={Logo} className='logo'></img>|
+      
+    <img src={bg} className='logo'></img>|
       <div className='login-box'>
+        
+      <Alert variant='success' hidden={isAlertHidden}> Login Success </Alert>
         <div className='screen_content'>
           <Form className='login '>  
-          <h3> Username</h3>
+          <h4> Username</h4>
             <input type='text' className='username'></input>
-            <h3> Password</h3>
+            <h4> Password</h4>
             <input type='password'></input> 
             <Button type='button' className='box btn' onClick={handleClick}><div className='loginbutton'>LOGIN</div></Button>
-            <Alert variant='success' hidden={isAlertHidden}> Login Success </Alert>
           </Form>
         </div>
       </div>
+      
     </div>
+    
     </>
   );
 };
