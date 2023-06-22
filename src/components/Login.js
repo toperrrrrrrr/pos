@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Alert } from 'react-bootstrap';
 import './mycss.css'
-import Logo from '../img/Logo.svg'
 import bg from '../img/bg.svg'
-import ReactDOM from "react-dom/client";
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
   const [isButtonDisabled, setButtonDisabled] = useState('primary');
   const [isAlertHidden, setAlertHidden] = useState(true);
   const username = "root";
   const password = "password";
+  const navigate = useNavigate();
 
   const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -20,11 +20,12 @@ const Login = () => {
     // Perform your login logic here
     // For simplicity, let's assume the login is successful
     setLoggedIn(true);
+    navigate('/dashboard'); // Redirect to the dashboard page
   };
 
   if (isLoggedIn) {
     // Redirect to another page if logged in
-    return <Redirect to="/Dashboard" />;
+    return <redirect to="/Dashboard" />;
   }
 
 
