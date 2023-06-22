@@ -5,7 +5,11 @@
 --dark1: #0D0E1C;
 --dark2: #262942;
 }
-
+.areyou{
+    width: 100%;
+    
+    margin-top: 20px; 
+}
 
 h4,h2,h1{
     color: aliceblue;
