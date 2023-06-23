@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Alert } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './mycss.css'
 import bg from '../img/bg.svg'
-import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
