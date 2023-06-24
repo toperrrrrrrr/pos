@@ -1,139 +1,207 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+:root {
+  --delay: 0s;
+}
 
 :root {
---dark1: #0D0E1C;
---dark2: #262942;
-}
-.areyou{
-    width: 100%;
-    
-    margin-top: 20px; 
+  --dark1: #0d0e1c;
+  --dark2: #262942;
 }
 
-h4,h2,h1{
-    color: aliceblue;
-    margin-top: 20px;
-    margin-bottom: -5px;
+/* Background */
 
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, var(--dark1), var(--dark2));
+  color: #9b9ca7;
+}
+
+.areyou {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+h4,
+h2,
+h1 {
+  color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: -5px;
 }
 
 /* ALL */
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;	
-	font-family: Raleway, sans-serif;
-}
-/* Background */
-body {
-	background: linear-gradient(180deg,var(--dark1),var(--dark2));		
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, sans-serif;
 }
 
-
-.login{
-    z-index: 10;
-    width: 100%;
+.login {
+  z-index: 10;
+  width: 100%;
 }
 
 .login-bg {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.login-box {		
-    background: #262942;		
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+.login-box {
+  background: #262942;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
 .screen__content {
-	position: relative;	
-	height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 input {
-    width: inherit;
-    height: 50px;
-    background: #262942;
-    color: white;
-    border-radius: 25px;
-    margin-top: 10px;
-    text-align:justify;
-    padding-left: 15px;
-    border: none;
-    box-shadow:inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
-                inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
-                inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4);
-    transition: all 0.3s ease-in-out;
-   }
-   
-   input:focus {
-    outline: none;
-    box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
-            inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
-            inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4),
-            5px 5px 10px 2.5px rgba(0, 0, 0, 0.2)
-   }
+  width: inherit;
+  height: 50px;
+  background: #262942;
+  color: white;
+  border-radius: 25px;
+  margin-top: 10px;
+  text-align: justify;
+  padding-left: 15px;
+  border: none;
+  box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
+    inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4);
+  transition: all 0.3s ease-in-out;
+}
 
+input:focus {
+  outline: none;
+  box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3),
+    inset -1px -2px 2px 0px rgba(77, 71, 100, 0.4),
+    5px 5px 10px 2.5px rgba(0, 0, 0, 0.2);
+}
 
 .divv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
 }
 
 .loginbutton {
-top: 0;
-margin: 5px;
-width:auto;
-height:25px;
-border-width: 0 6px 6px 0;
-display: inline-block;
-transition: background 0.1s ease-in-out;
+  top: 0;
+  margin: 5px;
+  width: auto;
+  height: 25px;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  transition: background 0.1s ease-in-out;
 }
 
-
-
 .btn {
+  text-align: center;
+  border-radius: 25px;
+  border: #262942;
 
-text-align: center;
-border-radius: 25px;
-border: #262942;
-
-background: #262942;
-cursor: pointer;
-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
+  background: #262942;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
     -10px -10px 20px 5px rgba(77, 71, 100, 0.4),
     -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
-transition: background 0.1s ease-in-out;
-margin-top: 25px;
-
-
+  transition: background 0.1s ease-in-out;
+  margin-top: 25px;
 }
 
 .btn:hover {
-background: #555b96;
+  background: #555b96;
 }
 
 .btn:active {
   box-shadow: 5px 5px 10px 2.5px rgba(0, 0, 0, 0.2),
-          -5px -5px 10px 2.5px rgba(77, 71, 100, 0.3),
-          -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
-          background: #3a3842;
+    -5px -5px 10px 2.5px rgba(77, 71, 100, 0.3),
+    -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
+  background: #3a3842;
 }
 
 .btn:active .wordd {
   border-width: 0 6px 6px 0;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.left-side {
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 117px 0 40px;
+  -webkit-animation: left 1s var(--delay) both;
+  animation: left 1s var(--delay) both;
+}
+.left-side svg {
+  width: 24px;
+  cursor: pointer;
+}
+.left-side svg + svg {
+  margin-top: 34px;
+}
+.left-side svg:last-child {
+  margin-top: auto;
+}
+.left-side svg.active,
+.left-side svg:hover {
+  color: #4255d4;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+}
+
+.confirmation-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.confirmation-buttons button {
+  margin-left: 10px;
 }
