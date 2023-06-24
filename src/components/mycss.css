@@ -115,7 +115,7 @@ input:focus {
   text-align: center;
   border-radius: 25px;
   border: #262942;
-
+color: aliceblue  ;
   background: #262942;
   cursor: pointer;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
@@ -191,7 +191,7 @@ input:focus {
 }
 
 .confirmation-box {
-  background-color: white;
+  background: #262942;
   padding: 20px;
   border-radius: 5px;
 }
@@ -200,6 +200,7 @@ input:focus {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+
 }
 
 .confirmation-buttons button {
