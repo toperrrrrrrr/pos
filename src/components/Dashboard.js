@@ -55,11 +55,11 @@ const Dashboard = () => {
           {showConfirmation && (
             <div className="confirmation-overlay">
               <div className="confirmation-box">
-                <h2>Logout Confirmation</h2>
-                <p>Are you sure you want to log out?</p>
+                <h2>Are you sure you want to log out?</h2>
+               
                 <div className="confirmation-buttons">
-                  <button onClick={exit}>Logout</button>
-                  <button onClick={toggleConfirmation}>Cancel</button>
+                  <button onClick={exit} className="box btn">Logout</button>
+                  <button onClick={toggleConfirmation} className="box btn">Cancel</button>
                 </div>
               </div>
             </div>
