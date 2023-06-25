@@ -31,9 +31,12 @@ const Login = () => {
               <input type="text" className="username"></input>
               <h4> Password</h4>
               <input type="password"></input>
+              <div className="confirmation-buttons"> 
               <Button type="button" className="box btn" onClick={handleLogin}>
                 <div className="loginbutton">LOGIN</div>
               </Button>
+              </div>
+
             </Form>
           </div>
         </div>
