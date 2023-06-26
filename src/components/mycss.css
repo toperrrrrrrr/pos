@@ -164,7 +164,7 @@ color: aliceblue  ;
 .left-side svg + svg {
   margin-top: 34px;
 }
-.left-side svg:last-child {
+.left-side svg:last-child{
   margin-top: auto;
 }
 .left-side svg.active,
