@@ -51,9 +51,6 @@ const Login = () => {
 
   return (
     <>
-      <Helmet>
-              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        </Helmet>
       <div className="login-bg">
         <img src={bg} className="logo"></img>
         <div className="login-box">
@@ -69,7 +66,6 @@ const Login = () => {
                 <div className="loginbutton">LOGIN</div>
               </Button>
               </div>
-
             </Form>
           </div>
         </div>
