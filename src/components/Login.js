@@ -30,7 +30,8 @@ const Login = () => {
   const navigate = useNavigate();
   let username = "admin"
   let password = "password"
-  let sstatus = ""
+
+
 
   const handleLogin = () => {
 
@@ -55,11 +56,10 @@ const Login = () => {
         <div className="login-box">
           <div className="screen_content">
             <Form className="login ">
-              <h4> {sstatus}</h4>
               <h4> Username</h4>
               <input type="text" className="username"  onChange={(e) => setUsername(e.target.value)}></input>
               <h4> Password</h4>
-              <input type="password"  onChange={(e) => setPassword(e.target.value)} ></input>
+              <input type="password" onChange={(e) => setPassword(e.target.value)} ></input>
               <div className="confirmation-buttons"> 
               <Button type="button" className="box btn" onClick={handleLogin}>
                 <div className="loginbutton">LOGIN</div>
