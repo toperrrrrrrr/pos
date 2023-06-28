@@ -1,40 +1,31 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./mycss.css";
 import bg from "../img/bg.svg";
+import alert from "./alert";
 
 const Login = () => {
-  const [isAlertHidden, setAlertHidden] = useState(true);
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isUsername, setUsername] = useState("");
   const [isPassword, setPassword] = useState("");
-
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [isLogout, setLogout] = useState(false);
+  const navigate = useNavigate();
+  let username = "admin"
+  let password = "password"
 
-  const exit = () => {
-    setLogout(true);
-    navigate("/");
-    if (isLogout) {
-      return <redirect to="/" />;
-    }
+  const [showAlert, setShowAlert] = useState(true);
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
   };
 
   const toggleConfirmation = () => {
     setShowConfirmation(!showConfirmation);
   };
 
-  const navigate = useNavigate();
-  let username = "admin"
-  let password = "password"
-
-
-
   const handleLogin = () => {
-
    if (username === isUsername && password === isPassword){
     setLoggedIn(true);
     navigate("/dashboard"); // Redirect to the dashboard page
@@ -43,10 +34,8 @@ const Login = () => {
     }
   }
   else{
-
    toggleConfirmation()
   }
-
   };
 
   return (
@@ -70,19 +59,14 @@ const Login = () => {
         </div>
       </div>
 
-      <div>
-          {showConfirmation && (
-            <div className="confirmation-overlay" onClick={toggleConfirmation}>
-              <div className="confirmation-box">
-                <h2>incorrect Credentials</h2>  
-               
-                <div className="confirmation-buttons">
-                  <button onClick={toggleConfirmation} className="box btn">Exit</button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+      {showAlert && (
+        <alert
+          message="This is an alert message."
+          type="success"
+          onClose={handleCloseAlert}
+        />
+      )}
+      
     </>
   );
 };
