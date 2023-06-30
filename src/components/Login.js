@@ -10,6 +10,7 @@ const Login = () => {
   const [isUsername, setUsername] = useState("");
   const [isPassword, setPassword] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [textNotif, setTextNotif] = useState("Original message");
   const navigate = useNavigate();
   let username = "admin"
   let password = "password"
@@ -27,13 +28,13 @@ const Login = () => {
       return <redirect to="/Dashboard" />;
     }
   }
-  else if (isUsername===""){
-    return(
-      <h1>test</h1>
-    )
+  else if(isUsername === ""){
+    setTextNotif("E")
+    toggleConfirmation()
   }
-  else if (isUsername===""){
-   toggleConfirmation()
+  else{
+    setTextNotif("default") 
+    toggleConfirmation()
   }
   };
 
@@ -45,7 +46,7 @@ const Login = () => {
           <div className="screen_content">
             <Form className="login ">
               <h4> Username</h4>
-              <input type="text" className="username"  onChange={(e) => setUsername(e.target.value)}></input>
+              <input type="text" className="username" value={isUsername}  onChange={(e) => setUsername(e.target.value)}></input>
               <h4> Password</h4>
               <input type="password" onChange={(e) => setPassword(e.target.value)} ></input>
               <div className="confirmation-buttons"> 
@@ -62,7 +63,7 @@ const Login = () => {
           {showConfirmation && (
             <div className="confirmation-overlay" onClick={toggleConfirmation}>
               <div className="confirmation-box">
-                <h2>incorrect Credentials</h2>
+                <h2>{textNotif}</h2>
                 <div className="confirmation-buttons">
                   <button onClick={toggleConfirmation} className="box btn">Exit</button>
                 </div>
