@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./mycss.css";
 import bg from "../img/bg.svg";
-import alert from "./alert";
 
 const Login = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -15,11 +14,6 @@ const Login = () => {
   let username = "admin"
   let password = "password"
 
-  const [showAlert, setShowAlert] = useState(true);
-
-  const handleCloseAlert = () => {
-    setShowAlert(false);
-  };
 
   const toggleConfirmation = () => {
     setShowConfirmation(!showConfirmation);
@@ -33,7 +27,12 @@ const Login = () => {
       return <redirect to="/Dashboard" />;
     }
   }
-  else{
+  else if (isUsername===""){
+    return(
+      <h1>test</h1>
+    )
+  }
+  else if (isUsername===""){
    toggleConfirmation()
   }
   };
@@ -59,14 +58,18 @@ const Login = () => {
         </div>
       </div>
 
-      {showAlert && (
-        <alert
-          message="This is an alert message."
-          type="success"
-          onClose={handleCloseAlert}
-        />
-      )}
-      
+      <div>
+          {showConfirmation && (
+            <div className="confirmation-overlay" onClick={toggleConfirmation}>
+              <div className="confirmation-box">
+                <h2>incorrect Credentials</h2>
+                <div className="confirmation-buttons">
+                  <button onClick={toggleConfirmation} className="box btn">Exit</button>
+                </div>
+              </div>
+            </div>
+          )}
+      </div>
     </>
   );
 };
