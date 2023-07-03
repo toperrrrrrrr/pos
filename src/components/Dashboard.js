@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mycss.css";
+import timecontrol from "./timecontrol";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -20,7 +21,10 @@ const Dashboard = () => {
   };
 
   return (
+    
     <>
+    
+    <timecontrol></timecontrol>
       <div class="wrapper ">
         <div class="left-side">
           <svg
