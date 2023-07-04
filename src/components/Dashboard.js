@@ -5,9 +5,6 @@ import Alerts from './Alerts/Alerts'
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [isLogout, setLogout] = useState(false);
-
   const [showPopup, setShowPopup] = useState(false);
 
   const handleOpenPopup = () => {
