@@ -16,8 +16,10 @@ const Dashboard = () => {
   };
 
   const handleConfirmAction = () => {
-    // Perform the desired action when the user confirms
-    alert('Confirmed action!');
+    navigate("/");
+    if (setShowPopup) {
+      return <redirect to="/" />;
+    }
     setShowPopup(false);
   };
 
@@ -56,7 +58,14 @@ const Dashboard = () => {
         </div>
 
         <div>
-
+<ul>
+<h1><li>Create a button that says clock in and a text box that will show you the time. After clicking the button, the button will change to red and make it as clock out instead of green clock in.</li>
+          <li>Make another h1 that will show what time and date wasthe clock in or out.</li>
+          <li>Create different pages that will be inserted on this dashboard pag that will show different functionalities</li>
+          
+          
+          </h1>
+          </ul>
       <Alerts
         isOpen={showPopup}
         title="Log Out?"

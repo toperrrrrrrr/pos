@@ -54,10 +54,30 @@ const Login = () => {
                 <div className="loginbutton">LOGIN</div>
               </Button>
               </div>
+
+<ul>
+<li> Edit the Alerts for this page. Make it unniform with other page</li>
+<li> add a check box for keep me signed in</li>
+<li>Add the eye button that will toggle the password on making it text and password type</li>
+<li>Make a onKeypress function that will trigger the handlelogin function</li>\
+<li>
+Connect the system to back end.
+</li>
+
+
+<li>
+make sure that every actions are being logged into the back end
+</li>
+<li>
+
+</li>
+
+</ul>
             </Form>
           </div>
         </div>
       </div>
+
 
       <div>
           {showConfirmation && (
