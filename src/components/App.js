@@ -7,7 +7,6 @@ import Register from "./Register";
 
 const App = () => {
   return (
-    
     <Router>
       <Routes>
         <Route path="/" element={<Login /> }  />
