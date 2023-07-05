@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mycss.css";
-import Alerts from './Alerts/Alerts'
+import Alerts from "./Alerts/Alerts";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -23,9 +23,7 @@ const Dashboard = () => {
     setShowPopup(false);
   };
 
-
   return (
-    
     <>
       <div class="wrapper ">
         <div class="left-side">
@@ -58,22 +56,34 @@ const Dashboard = () => {
         </div>
 
         <div>
-<ul>
-<h1><li>Create a button that says clock in and a text box that will show you the time. After clicking the button, the button will change to red and make it as clock out instead of green clock in.</li>
-          <li>Make another h1 that will show what time and date wasthe clock in or out.</li>
-          <li>Create different pages that will be inserted on this dashboard pag that will show different functionalities</li>
-          
-          
-          </h1>
-          </ul>
-      <Alerts
-        isOpen={showPopup}
-        title="Log Out?"
-        message="Are you sure you want to Log out?"
-        onClose={handleClosePopup}
-        onConfirm={handleConfirmAction}
-      />
-    </div>
+          <div className="dashboard-box">
+            <ul>
+              <h1>
+                <li>
+                  Create a button that says clock in and a text box that will
+                  show you the time. After clicking the button, the button will
+                  change to red and make it as clock out instead of green clock
+                  in.
+                </li>
+                <li>
+                  Make another h1 that will show what time and date wasthe clock
+                  in or out.
+                </li>
+                <li>
+                  Create different pages that will be inserted on this dashboard
+                  pag that will show different functionalities
+                </li>
+              </h1>
+            </ul>
+          </div>
+          <Alerts
+            isOpen={showPopup}
+            title="Log Out?"
+            message="Are you sure you want to Log out?"
+            onClose={handleClosePopup}
+            onConfirm={handleConfirmAction}
+          />
+        </div>
       </div>
     </>
   );

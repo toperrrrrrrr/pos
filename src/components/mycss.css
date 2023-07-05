@@ -63,6 +63,17 @@ h1 {
   border-radius: 10px;
 }
 
+.dashboard-box {
+  background: var(--color-bg);
+
+  margin: 30px;
+  height: 90%;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px var(--color-shadow);
+  border-radius: 10px;
+}
+
 .screen__content {
   position: relative;
   height: 100%;
