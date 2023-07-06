@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .section {
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  

@@ -4,7 +4,6 @@ const Alerts = ({ isOpen, title, message, onClose, onConfirm, isHidden }) => {
     if (!isOpen) {
       return null;
     }
-    
     return (
         <>
         <div className="confirmation-overlay">

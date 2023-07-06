@@ -16,6 +16,8 @@ body {
   font-family: "Inter", sans-serif;
   background: linear-gradient(180deg, var(--dark1), var(--dark2));
   color: #9b9ca7;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .areyou {
@@ -65,7 +67,8 @@ h1 {
 
 .dashboard-box {
   background: var(--color-bg);
-
+  overflow-x: auto;
+  display: flex;
   margin: 30px;
   height: 90%;
   padding: 30px;
