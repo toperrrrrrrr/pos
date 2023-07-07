@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mycss.css";
 import Alerts from "./Alerts/Alerts";
+import Clock from "./Clock";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
+
+
 
   const handleOpenPopup = () => {
     setShowPopup(true);
@@ -22,6 +25,8 @@ const Dashboard = () => {
     }
     setShowPopup(false);
   };
+
+
 
 
   const horiScroll = () => {
@@ -66,6 +71,7 @@ const Dashboard = () => {
         </div>
 
         <div>
+        <Clock />
           <div className="dashboard-box">
             <ul>
               <h1>
