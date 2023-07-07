@@ -67,7 +67,7 @@ const HorizontalScroll = () => {
               </h1>
             </ul>
           </div></div>
-      <div className="section"><div className="dashboard-box">
+      <div className=""><div className="dashboard-box section">
             <ul>
               <h1>
                 <li>

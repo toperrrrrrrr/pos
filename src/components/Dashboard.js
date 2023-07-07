@@ -4,11 +4,9 @@ import "./mycss.css";
 import Alerts from "./Alerts/Alerts";
 import Clock from "./Clock";
 
-const Dashboard = () => {
+const Dashboard = ({capturedtime}) => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
-
-
 
   const handleOpenPopup = () => {
     setShowPopup(true);
@@ -72,6 +70,7 @@ const Dashboard = () => {
 
         <div>
         <Clock />
+      
           <div className="dashboard-box">
             <ul>
               <h1>
@@ -92,6 +91,7 @@ const Dashboard = () => {
               </h1>
             </ul>
           </div>
+          <div className="bottom-border "></div>
           <Alerts
             isOpen={showPopup}
             title="Log Out?"

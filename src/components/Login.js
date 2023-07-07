@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +15,20 @@ const Login = () => {
   const navigate = useNavigate();
   let username = "admin";
   let password = "password";
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log("Enter key was pressed. Run your function.");
+        event.preventDefault();
+        handleLogin();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   const handleOpenPopup = () => {
     setShowPopup(true);
