@@ -40,12 +40,11 @@ const Login = () => {
   const handleLogin = () => {
     if (username === isUsername && password === isPassword) {
       setLoggedIn(true);
-      navigate("/dashboard"); // Redirect to the dashboard page
+      navigate("/dashboard");
       if (isLoggedIn) {
         return <redirect to="/Dashboard" />;
       }
     } else if (isUsername === "") {
-      
       handleOpenPopup();
     } else {
       handleOpenPopup();
@@ -86,8 +85,7 @@ const Login = () => {
                 </li>
                 <li> add a check box for keep me signed in</li>
                 <li>
-                  Add the eye button that will toggle the password on making it
-                  text and password type
+                  Move the Eye button to next the password field  
                 </li>
                 <li>
                   Make a onKeypress function that will trigger the handlelogin
@@ -98,7 +96,6 @@ const Login = () => {
                   make sure that every actions are being logged into the back
                   end
                 </li>
-                <li></li>
               </ul>
             </Form>
           </div>
