@@ -16,19 +16,6 @@ const Login = () => {
   let username = "admin";
   let password = "password";
 
-  useEffect(() => {
-    const listener = event => {
-      if (event.code === "Enter" || event.code === "NumpadEnter") {
-        console.log("Enter key was pressed. Run your function.");
-        event.preventDefault();
-        handleLogin();
-      }
-    };
-    document.addEventListener("keydown", listener);
-    return () => {
-      document.removeEventListener("keydown", listener);
-    };
-  }, []);
 
   const handleOpenPopup = () => {
     setShowPopup(true);
@@ -64,6 +51,19 @@ const Login = () => {
       handleOpenPopup();
     }
   };
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter") {
+        event.preventDefault();
+        handleLogin();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <>
