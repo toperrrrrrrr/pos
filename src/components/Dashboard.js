@@ -69,9 +69,10 @@ const Dashboard = ({capturedtime}) => {
         </div>
 
         <div>
-        <Clock />
+      
       
           <div className="dashboard-box">
+         
             <ul>
               <h1>
                 <li>
@@ -90,7 +91,10 @@ const Dashboard = ({capturedtime}) => {
                 </li>
               </h1>
             </ul>
+            <Clock />
+            
           </div>
+          
           <div className="bottom-border "></div>
           <Alerts
             isOpen={showPopup}
