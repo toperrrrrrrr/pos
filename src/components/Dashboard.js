@@ -72,7 +72,8 @@ const Dashboard = ({capturedtime}) => {
       
       
           <div className="dashboard-box">
-         
+                
+          <div className="login-box">  <Clock /></div>
             <ul>
               <h1>
                 <li>
@@ -81,6 +82,7 @@ const Dashboard = ({capturedtime}) => {
                   change to red and make it as clock out instead of green clock
                   in.
                 </li>
+                <li>Create more divs for different containers</li>
                 <li>
                   Make another h1 that will show what time and date wasthe clock
                   in or out.
@@ -91,7 +93,7 @@ const Dashboard = ({capturedtime}) => {
                 </li>
               </h1>
             </ul>
-            <Clock />
+          
             
           </div>
           
