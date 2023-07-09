@@ -24,14 +24,11 @@ const Dashboard = ({capturedtime}) => {
     setShowPopup(false);
   };
 
-
-
-
   const horiScroll = () => {
     navigate("/HorizontalScroll"); // Redirect to the dashboard page
    
       return <redirect to="/HorizontalScroll" />;
- 
+
   };
 
   
