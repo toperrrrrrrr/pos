@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   const eye =() =>{
-    if (isEye=="password"){
+    if (isEye==="password"){
     setEye("text")
   }
   else
@@ -55,6 +55,7 @@ const Login = () => {
   useEffect(() => {
     const listener = event => {
       if (event.code === "Enter") {
+         setLoggedIn(true);
         event.preventDefault();
         handleLogin();
       }
@@ -68,7 +69,7 @@ const Login = () => {
   return (
     <>
       <div className="login-bg">
-        <img src={bg} className="logo"></img>
+        <img src={bg} className="logo" alt="Logo"></img>
         <div className="login-box">
           <div className="screen_content">
             <Form className="login ">

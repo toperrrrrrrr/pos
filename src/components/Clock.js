@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Dashboard from './Dashboard';
+
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
   const [capturedTime, setCapturedTime] = useState(null);
+
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const currentDate = new Date();
+    setCurrentDate(currentDate.toDateString());
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,6 +30,7 @@ const Clock = () => {
     <div>
       <h1>{time.toLocaleTimeString()}</h1>
       <button onClick={captureTime}>Capture Time</button>
+      <p>{currentDate}</p>
       {capturedTime && <p>Captured Time: {capturedTime}</p>}
     
     </div>
