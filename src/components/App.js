@@ -6,6 +6,7 @@ import NoPage from "./404";
 import Register from "./Register";
 import HorizontalScroll from "./HorizontalScroll";
 
+
 const App = () => {
   return (
     <Router>

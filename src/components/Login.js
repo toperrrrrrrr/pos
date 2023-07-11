@@ -37,6 +37,14 @@ const Login = () => {
   setEye("password")
   }
 
+  const register = () => {
+    navigate("/Register"); // Redirect to the dashboard page
+   
+      return <redirect to="/Register" />;
+   
+    
+  };
+  
 
   const handleLogin = () => {
     if (username === isUsername && password === isPassword) {
@@ -91,6 +99,9 @@ const Login = () => {
                 </Button>
                 <Button type="button" className="box btn" onClick={eye}>
                   <div className="loginbutton">eye</div>
+                </Button>
+                <Button type="button" className="box btn" onClick={register}>
+                  <div className="loginbutton">Register</div>
                 </Button>
               </div>
               <ul>
