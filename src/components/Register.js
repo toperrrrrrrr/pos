@@ -17,6 +17,12 @@ const Register = () => {
    
   };
 
+  const handleNavigateLogin = () => {
+  navigate("/");
+  return <redirect to="/Login" />;
+
+  };
+  
   return (
     <>
       <div className="login-bg">
@@ -31,6 +37,9 @@ const Register = () => {
               <div className="confirmation-buttons"> 
               <Button type="button" className="box btn" onClick={handleRegister}>
                 <div className="loginbutton">Register</div>
+              </Button>
+              <Button type="button" className="box btn" onClick={handleNavigateLogin}>
+                <div className="loginbutton">Login</div>
               </Button>
               </div>
             </Form>
