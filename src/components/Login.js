@@ -16,7 +16,6 @@ const Login = () => {
   let username = "admin";
   let password = "password";
 
-
   const handleOpenPopup = () => {
     setShowPopup(true);
   };
@@ -29,41 +28,30 @@ const Login = () => {
     handleClosePopup();
   };
 
-  const eye =() =>{
-    if (isEye==="password"){
-    setEye("text")
-  }
-  else
-  setEye("password")
-  }
+  const eye = () => {
+    if (isEye === "password") {
+      setEye("text");
+    } else setEye("password");
+  };
 
   const register = () => {
-    navigate("/Register"); // Redirect to the dashboard page
-   
-      return <redirect to="/Register" />;
-   
-    
+    navigate("/Register");
+    return <redirect to="/Register" />;
   };
-  
 
   const handleLogin = () => {
     if (username === isUsername && password === isPassword) {
       setLoggedIn(true);
       navigate("/dashboard");
-      if (isLoggedIn) {
-        return <redirect to="/Dashboard" />;
-      }
-    } else if (isUsername === "") {
-      handleOpenPopup();
     } else {
       handleOpenPopup();
     }
-  };
+  };  
 
   useEffect(() => {
-    const listener = event => {
+    const listener = (event) => {
       if (event.code === "Enter") {
-         setLoggedIn(true);
+        setLoggedIn(true);
         event.preventDefault();
         handleLogin();
       }
@@ -80,9 +68,7 @@ const Login = () => {
         <img src={bg} className="logo" alt="Logo"></img>
         <div className="login-box">
           <div className="screen_content">
-          
             <Form className="login ">
-              
               <h4> Username</h4>
               <input
                 type="text"
@@ -112,9 +98,7 @@ const Login = () => {
                   page
                 </li>
                 <li> add a check box for keep me signed in</li>
-                <li>
-                  Move the Eye button to next the password field  
-                </li>
+                <li>Move the Eye button to next the password field</li>
                 <li>
                   Make a onKeypress function that will trigger the handlelogin
                   function
@@ -132,12 +116,11 @@ const Login = () => {
             title="Wrong Credentials"
             message="Please Double check"
             onClose={handleClosePopup}
-            isHidden= "true"
+            isHidden="true"
             onConfirm={handleConfirmAction}
           />
         </div>
       </div>
-
     </>
   );
 };

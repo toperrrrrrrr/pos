@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
   const [capturedTime, setCapturedTime] = useState(null);
 
-  const [currentDate, setCurrentDate] = useState('');
+  const [currentDate, setCurrentDate] = useState("");
 
   useEffect(() => {
     const currentDate = new Date();
@@ -32,7 +31,6 @@ const Clock = () => {
       <button onClick={captureTime}>Capture Time</button>
       <p>{currentDate}</p>
       {capturedTime && <p>Captured Time: {capturedTime}</p>}
-    
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./mycss.css";
 import Alerts from "./Alerts/Alerts";
 import Clock from "./Clock";
 
-const Dashboard = ({capturedtime}) => {
+const Dashboard = ({ capturedtime }) => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
 
@@ -26,12 +26,10 @@ const Dashboard = ({capturedtime}) => {
 
   const horiScroll = () => {
     navigate("/HorizontalScroll"); // Redirect to the dashboard page
-   
-      return <redirect to="/HorizontalScroll" />;
 
+    return <redirect to="/HorizontalScroll" />;
   };
 
-  
   return (
     <>
       <div class="wrapper ">
@@ -66,11 +64,11 @@ const Dashboard = ({capturedtime}) => {
         </div>
 
         <div>
-      
-      
           <div className="dashboard-box">
-                
-          <div className="login-box">  <Clock /></div>
+            <div className="login-box">
+              {" "}
+              <Clock />
+            </div>
             <ul>
               <h1>
                 <li>
@@ -90,10 +88,8 @@ const Dashboard = ({capturedtime}) => {
                 </li>
               </h1>
             </ul>
-          
-            
           </div>
-          
+
           <div className="bottom-border "></div>
           <Alerts
             isOpen={showPopup}
