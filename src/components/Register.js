@@ -9,24 +9,52 @@ import Axios from "axios";
 const Register = () => {
   const [isUsername, setUsername] = useState("");
   const [isPassword, setPassword] = useState("");
+  const [isID, setId] = useState("");
   const navigate = useNavigate();
   const [isResponse, setResponse] = useState([])
+  
 
-  useEffect(()=>{
-    Axios.get("http://localhost:3001/api/get").then((response)=>{
-      console.log(response.data)
-    setResponse (response.data)
-    })
-  },[])
+  useEffect(() => {
+    fetchData(); // Fetch data initially
+  }, []);
 
-  const handleSubmit = () => {
-    Axios.post("http://localhost:3001/api/insert", {
-      userName: isUsername,
-      password: isPassword,
-    }).then(() => {
-      alert("Successfull insert");
-    });
+  const fetchData = async () => {
+    try {
+      const response = await Axios.get("http://localhost:3001/api/get");
+      setResponse(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const handleSubmit = async () => {
+    try {
+      await Axios.post("http://localhost:3001/api/insert", {
+        userName: isUsername,
+        password: isPassword,
+      });
+      alert("Successfully inserted");
+      fetchData(); // Fetch data again after successful insert
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDelete = async () => {
+    // Assuming you have the user's id stored in a variable called 'userId'
+    const userId = isID ; // Replace with the actual user id
+  
+    try {
+      const response = await Axios.delete(`http://localhost:3001/api/delete/`, userId);
+      console.log(response.data); // Success message
+      fetchData();
+      // Handle any further actions after successful delete
+    } catch (error) {
+      console.error(error); // Error message
+      // Handle error cases
+    }
+  };
+  
 
   const handleNavigateLogin = () => {
     navigate("/");
@@ -43,7 +71,9 @@ const Register = () => {
 
               {isResponse.map((val)=>{
 
-                return <p>Nanme {val.users_Username}</p>
+                return <><p>{val.idUsers}    {val.users_Username} </p>
+           
+                </>
               })}
               <h4> Register </h4>
               <input
@@ -57,6 +87,11 @@ const Register = () => {
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+              ></input>
+                <input
+                type="text"
+                placeholder="ID"
+                onChange={(e) => setId(e.target.value)}
               ></input>
               <div className="confirmation-buttons">
                 <Button
@@ -72,6 +107,15 @@ const Register = () => {
                   onClick={handleNavigateLogin}
                 >
                   <div className="loginbutton">Login</div>
+                </Button>
+
+
+                <Button
+                  type="button"
+                  className="box btn"
+                  onClick={handleDelete}
+                >
+                  <div className="loginbutton">Delete {isID}</div>
                 </Button>
               </div>
             </Form>
