@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +10,14 @@ const Register = () => {
   const [isUsername, setUsername] = useState("");
   const [isPassword, setPassword] = useState("");
   const navigate = useNavigate();
+  const [isResponse, setResponse] = useState([])
+
+  useEffect(()=>{
+    Axios.get("http://localhost:3001/api/get").then((response)=>{
+      console.log(response.data)
+    setResponse (response.data)
+    })
+  },[])
 
   const handleSubmit = () => {
     Axios.post("http://localhost:3001/api/insert", {
@@ -32,6 +40,11 @@ const Register = () => {
         <div className="login-box">
           <div className="screen_content">
             <Form className="login ">
+
+              {isResponse.map((val)=>{
+
+                return <h1>Nanme {val.users_Username}</h1>
+              })}
               <h4> Username </h4>
               <input
                 type="text"
