@@ -43,17 +43,19 @@ const Register = () => {
 
               {isResponse.map((val)=>{
 
-                return <h1>Nanme {val.users_Username}</h1>
+                return <p>Nanme {val.users_Username}</p>
               })}
-              <h4> Username </h4>
+              <h4> Register </h4>
               <input
                 type="text"
+                placeholder="Username"
                 className="username"
                 onChange={(e) => setUsername(e.target.value)}
               ></input>
-              <h4> Password </h4>
+         
               <input
                 type="password"
+                placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               <div className="confirmation-buttons">
