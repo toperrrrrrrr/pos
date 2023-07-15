@@ -45,9 +45,9 @@ const Register = () => {
     const userId = isID ; // Replace with the actual user id
   
     try {
-      const response = await Axios.delete(`http://localhost:3001/api/delete/`, userId);
+      const response = await Axios.delete(`http://localhost:3001/api/delete/${userId}`);
       console.log(response.data); // Success message
-      fetchData();
+       fetchData();
       // Handle any further actions after successful delete
     } catch (error) {
       console.error(error); // Error message
