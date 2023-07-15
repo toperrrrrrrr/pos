@@ -15,7 +15,7 @@ const Register = () => {
   
 
   useEffect(() => {
-    fetchData(); // Fetch data initially
+    fetchData();
   }, []);
 
   const fetchData = async () => {
@@ -33,21 +33,20 @@ const Register = () => {
         userName: isUsername,
         password: isPassword,
       });
-      alert("Successfully inserted");
-      fetchData(); // Fetch data again after successful insert
+      console.log("Successfully inserted");
+      fetchData();
     } catch (error) {
       console.error(error);
     }
   };
 
   const handleDelete = async () => {
-    // Assuming you have the user's id stored in a variable called 'userId'
     const userId = isID ; // Replace with the actual user id
   
     try {
       const response = await Axios.delete(`http://localhost:3001/api/delete/${userId}`);
       console.log(response.data); // Success message
-       fetchData();
+      fetchData();
       // Handle any further actions after successful delete
     } catch (error) {
       console.error(error); // Error message
