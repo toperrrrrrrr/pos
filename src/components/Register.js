@@ -9,10 +9,10 @@ import Axios from "axios";
 const Register = () => {
   const [isUsername, setUsername] = useState("");
   const [isPassword, setPassword] = useState("");
+  const [newUsername, setNewUsername] = useState("");
   const [isID, setId] = useState("");
+  const [isResponse, setResponse] = useState([]);
   const navigate = useNavigate();
-  const [isResponse, setResponse] = useState([])
-  
 
   useEffect(() => {
     fetchData();
@@ -40,20 +40,37 @@ const Register = () => {
     }
   };
 
-  const handleDelete = async () => {
-    const userId = isID ; // Replace with the actual user id
-  
+  const handleUpdate = async () => {
     try {
-      const response = await Axios.delete(`http://localhost:3001/api/delete/${userId}`);
+      await Axios.put("http://localhost:3001/api/update", {
+        userId  : isID,
+        userName: isUsername,
+        newUsername: newUsername,
+      });
+      console.log("Successfully Updated");
+      fetchData();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  const handleDelete = async () => {
+    const userId = isID; // Replace with the actual user id
+
+    try {
+      const response = await Axios.delete(
+        `http://localhost:3001/api/delete/${userId}`
+      );
       console.log(response.data); // Success message
       fetchData();
+      setId("")
       // Handle any further actions after successful delete
     } catch (error) {
       console.error(error); // Error message
       // Handle error cases
+   
     }
   };
-  
 
   const handleNavigateLogin = () => {
     navigate("/");
@@ -67,12 +84,14 @@ const Register = () => {
         <div className="login-box">
           <div className="screen_content">
             <Form className="login ">
-
-              {isResponse.map((val)=>{
-
-                return <><p>{val.idUsers}    {val.users_Username} </p>
-           
-                </>
+              {isResponse.map((val) => {
+                return (
+                  <>
+                    <p>
+                      {val.idUsers} {val.users_Username}{" "}
+                    </p>
+                  </>
+                );
               })}
               <h4> Register </h4>
               <input
@@ -81,16 +100,21 @@ const Register = () => {
                 className="username"
                 onChange={(e) => setUsername(e.target.value)}
               ></input>
-         
+
               <input
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
-                <input
+              <input
                 type="text"
                 placeholder="ID"
                 onChange={(e) => setId(e.target.value)}
+              ></input>         
+               <input
+                type="text"
+                placeholder="newusername"
+                onChange={(e) => setNewUsername(e.target.value)}
               ></input>
               <div className="confirmation-buttons">
                 <Button
@@ -108,13 +132,19 @@ const Register = () => {
                   <div className="loginbutton">Login</div>
                 </Button>
 
-
                 <Button
                   type="button"
                   className="box btn"
                   onClick={handleDelete}
                 >
                   <div className="loginbutton">Delete {isID}</div>
+                </Button>
+                <Button
+                  type="button"
+                  className="box btn"
+                  onClick={handleDelete}
+                >
+                  <div className="loginbutton">Update</div>
                 </Button>
               </div>
             </Form>
