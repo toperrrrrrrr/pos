@@ -142,7 +142,7 @@ const Register = () => {
                 <Button
                   type="button"
                   className="box btn"
-                  onClick={handleDelete}
+                  onClick={handleUpdate}
                 >
                   <div className="loginbutton">Update</div>
                 </Button>
