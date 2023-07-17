@@ -25,7 +25,7 @@ const Dashboard = ({ capturedtime }) => {
   };
 
   const horiScroll = () => {
-    navigate("/HorizontalScroll"); // Redirect to the dashboard page
+    navigate("/HorizontalScroll");
 
     return <redirect to="/HorizontalScroll" />;
   };

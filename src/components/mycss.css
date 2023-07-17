@@ -136,7 +136,6 @@ input:focus {
 
 .btn {
   text-align: center;
-  border-radius: 25px;
   border: #262942;
   color: var(--color-text);
   background: var(--color-bg);

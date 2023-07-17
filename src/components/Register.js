@@ -43,7 +43,7 @@ const Register = () => {
   const handleUpdate = async () => {
     try {
       await Axios.put("http://localhost:3001/api/update", {
-        userId  : isID,
+        userId: isID,
         userName: isUsername,
         newUsername: newUsername,
       });
@@ -53,7 +53,7 @@ const Register = () => {
       console.error(error);
     }
   };
-  
+
   const handleDelete = async () => {
     const userId = isID; // Replace with the actual user id
 
@@ -63,12 +63,11 @@ const Register = () => {
       );
       console.log(response.data); // Success message
       fetchData();
-      setId("")
+      setId("");
       // Handle any further actions after successful delete
     } catch (error) {
       console.error(error); // Error message
       // Handle error cases
-   
     }
   };
 
@@ -84,6 +83,13 @@ const Register = () => {
         <div className="login-box">
           <div className="screen_content">
             <Form className="login ">
+              <Button
+                type="button"
+                className="box btn"
+                onClick={handleNavigateLogin}
+              >
+                <div className="loginbutton">Login</div>
+              </Button>
               {isResponse.map((val) => {
                 return (
                   <>
@@ -110,8 +116,8 @@ const Register = () => {
                 type="text"
                 placeholder="ID"
                 onChange={(e) => setId(e.target.value)}
-              ></input>         
-               <input
+              ></input>
+              <input
                 type="text"
                 placeholder="newusername"
                 onChange={(e) => setNewUsername(e.target.value)}
@@ -123,13 +129,6 @@ const Register = () => {
                   onClick={handleSubmit}
                 >
                   <div className="loginbutton">Submit</div>
-                </Button>
-                <Button
-                  type="button"
-                  className="box btn"
-                  onClick={handleNavigateLogin}
-                >
-                  <div className="loginbutton">Login</div>
                 </Button>
 
                 <Button
