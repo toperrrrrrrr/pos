@@ -86,6 +86,21 @@ const Dashboard = ({ capturedtime }) => {
                   Create different pages that will be inserted on this dashboard
                   pag that will show different functionalities
                 </li>
+                <li>
+                  Edit the Alerts for this page. Make it unniform with other
+                  page
+                </li>
+                <li>add a check box for keep me signed in</li>
+                <li>Move the Eye button to next the password field</li>
+                <li>
+                  Make a onKeypress function that will trigger the handlelogin
+                  function
+                </li>
+                <li>
+                  make sure that every actions are being logged into the back
+                  end
+                </li>
+           
               </h1>
             </ul>
           </div>

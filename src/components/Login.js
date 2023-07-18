@@ -46,7 +46,7 @@ const Login = () => {
     } else {
       handleOpenPopup();
     }
-  };  
+  };
 
   useEffect(() => {
     const listener = (event) => {
@@ -64,62 +64,44 @@ const Login = () => {
 
   return (
     <>
-      <div className="login-bg">
+      <div className="screen-bg">
         <img src={bg} className="logo" alt="Logo"></img>
         <div className="login-box">
-          <div className="screen_content">
-            <Form className="login ">
-              <h4> Username</h4>
-              <input
-                type="text"
-                className="username"
-                value={isUsername}
-                onChange={(e) => setUsername(e.target.value)}
-              ></input>
-              <h4> Password</h4>
-              <input
-                type={isEye}
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-              <div className="confirmation-buttons">
-                <Button type="button" className="box btn" onClick={handleLogin}>
-                  <div className="loginbutton">LOGIN</div>
-                </Button>
-                <Button type="button" className="box btn" onClick={eye}>
-                  <div className="loginbutton">eye</div>
-                </Button>
-                <Button type="button" className="box btn" onClick={register}>
-                  <div className="loginbutton">Register</div>
-                </Button>
-              </div>
-              <ul>
-                <li>
-                  Edit the Alerts for this page. Make it unniform with other
-                  page
-                </li>
-                <li> add a check box for keep me signed in</li>
-                <li>Move the Eye button to next the password field</li>
-                <li>
-                  Make a onKeypress function that will trigger the handlelogin
-                  function
-                </li>
-                <li>Connect the system to back end.</li>
-                <li>
-                  make sure that every actions are being logged into the back
-                  end
-                </li>
-              </ul>
-            </Form>
-          </div>
-          <Alerts
-            isOpen={showPopup}
-            title="Wrong Credentials"
-            message="Please Double check"
-            onClose={handleClosePopup}
-            isHidden="true"
-            onConfirm={handleConfirmAction}
-          />
+          <Form className="login-form">
+            <h4> Username</h4>
+            <input
+              type="text"
+              className="form-input"
+              value={isUsername}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+            <h4> Password</h4>
+            <input
+              type={isEye}
+              className="form-input"
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <div className="login-button-container">
+              <Button type="button" className="form-btn" onClick={handleLogin}>
+                <div className="loginbutton">LOGIN</div>
+              </Button>
+              <Button type="button" className="form-btn" onClick={eye}>
+                <div className="loginbutton">eye</div>
+              </Button>
+              <Button type="button" className="form-btn" onClick={register}>
+                <div className="loginbutton">Register</div>
+              </Button>
+            </div>
+          </Form>
         </div>
+        <Alerts
+          isOpen={showPopup}
+          title="Wrong Credentials"
+          message="Please Double check"
+          onClose={handleClosePopup}
+          isHidden="true"
+          onConfirm={handleConfirmAction}
+        />
       </div>
     </>
   );
