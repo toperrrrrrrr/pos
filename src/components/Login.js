@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./mycss.css";
-import bg from "../img/bg.svg";
+import "./index.css";
 import Alerts from "./Alerts/Alerts";
 
 const Login = () => {
@@ -65,34 +62,38 @@ const Login = () => {
   return (
     <>
       <div className="screen-bg">
-        <img src={bg} className="logo" alt="Logo"></img>
         <div className="login-box">
-          <Form className="login-form">
-            <h4> Username</h4>
+          <form className="login-form">
+            <h1 className="center-text">Sign In</h1>
+            <h6> Username</h6>
+            <div className="input-box">
             <input
               type="text"
               className="form-input"
               value={isUsername}
+              placeholder="Administrator"
               onChange={(e) => setUsername(e.target.value)}
-            ></input>
-            <h4> Password</h4>
+            ></input></div>
+            <h6> Password</h6>
+            <div className="input-box"> 
             <input
               type={isEye}
               className="form-input"
+              placeholder="*********"
               onChange={(e) => setPassword(e.target.value)}
-            ></input>
+            ></input></div>
             <div className="login-button-container">
-              <Button type="button" className="form-btn" onClick={handleLogin}>
-                <div className="loginbutton">LOGIN</div>
-              </Button>
-              <Button type="button" className="form-btn" onClick={eye}>
-                <div className="loginbutton">eye</div>
-              </Button>
-              <Button type="button" className="form-btn" onClick={register}>
-                <div className="loginbutton">Register</div>
-              </Button>
+              <button type="button" className="form-btn" onClick={handleLogin}>
+              LOGIN
+              </button>
+              <button type="button" className="form-btn" onClick={eye}>
+              Eye
+              </button>
+              <button type="button" className="form-btn" onClick={register}>
+               register
+              </button>
             </div>
-          </Form>
+          </form>
         </div>
         <Alerts
           isOpen={showPopup}
