@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useNavigate } from "react-router-dom";
-import "./index.css";
+import "./Login.css";
 import Alerts from "./Alerts/Alerts";
 import eyes from "../img/eye.svg";
 
