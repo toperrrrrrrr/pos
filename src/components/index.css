@@ -86,7 +86,6 @@ h1 {
   transition: all 0.3s ease-in-out;
 }
 
-
 .form-input:focus {
   outline: none;
   box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2),
@@ -96,3 +95,72 @@ h1 {
 }
 
 
+.login-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+} 
+
+
+.login-button {
+  top: 0;
+  margin: 5px;
+  width: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: autos;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+}
+
+
+.form-btn {
+  text-align: center;
+  border: #262942;
+  box-shadow: 0 15px 25px var(--color-shadow);
+  margin: 5px;
+  border-radius: 15px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  cursor: pointer;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
+    -10px -10px 20px 5px rgba(77, 71, 100, 0.4),
+    -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
+  transition: background 0.1s ease-in-out;
+  margin-top: 25px;
+}
+
+.form-btn:hover {
+  background: var(--color-box);
+}
+
+.form-btn:active {
+  box-shadow: 5px 5px 10px 2.5px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px 2.5px rgba(77, 71, 100, 0.3),
+    -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
+  background: var(--color-box-hover);
+}
+
+
+.eyes{
+  fill:aliceblue;
+  padding: 5px;
+}
+
+.eye-button {
+  text-align: center;
+  border: #262942;
+  box-shadow: 0 15px 25px var(--color-shadow);
+  margin: 5px;
+  border-radius: 100px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  cursor: pointer;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2),
+    -10px -10px 20px 5px rgba(77, 71, 100, 0.4),
+    -1px -1px 4px 2px rgba(77, 71, 100, 0.4);
+  transition: background 0.1s ease-in-out;
+  margin-top: 25px;
+}

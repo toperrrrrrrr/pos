@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 import Alerts from "./Alerts/Alerts";
+import eyes from "../img/eye.svg";
 
 const Login = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -67,31 +69,33 @@ const Login = () => {
             <h1 className="center-text">Sign In</h1>
             <h6> Username</h6>
             <div className="input-box">
-            <input
-              type="text"
-              className="form-input"
-              value={isUsername}
-              placeholder="Administrator"
-              onChange={(e) => setUsername(e.target.value)}
-            ></input></div>
+              <input
+                type="text"
+                className="form-input"
+                value={isUsername}
+                placeholder="Administrator"
+                onChange={(e) => setUsername(e.target.value)}
+              ></input>
+            </div>
             <h6> Password</h6>
-            <div className="input-box"> 
-            <input
-              type={isEye}
-              className="form-input"
-              placeholder="*********"
-              onChange={(e) => setPassword(e.target.value)}
-            ></input></div>
+            <div className="input-box input-container">
+              <input
+                type={isEye}
+                className="form-input"
+                placeholder="*********"
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+            </div>
             <div className="login-button-container">
               <button type="button" className="form-btn" onClick={handleLogin}>
-              LOGIN
+                <div className="login-button">Login</div>
               </button>
-              <button type="button" className="form-btn" onClick={eye}>
-              Eye
-              </button>
-              <button type="button" className="form-btn" onClick={register}>
-               register
-              </button>
+              <button type="button" className="eye-button" onClick={eye}>
+              <img src={eyes} className="eyes"></img>
+            </button>
+            </div>
+            <div className="form-btn" onClick={register}>
+              Register Here.
             </div>
           </form>
         </div>
