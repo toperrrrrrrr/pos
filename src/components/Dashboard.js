@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import Alerts from "./Alerts/Alerts";
 import Clock from "./Clock";
+import Sidebar from "./Sidebar";
 
 const Dashboard = ({ capturedtime }) => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Dashboard = ({ capturedtime }) => {
   return (
     <div className="screen-bg">
       <div class="wrapper ">
-        <div class="left-side">
+        {/* <div class="left-side">
           <svg
             viewBox="0 0 512 512"
             fill="currentColor"
@@ -61,7 +62,8 @@ const Dashboard = ({ capturedtime }) => {
             <path d="M255.2 468.6H63.8a21.3 21.3 0 01-21.3-21.2V64.6c0-11.7 9.6-21.2 21.3-21.2h191.4a21.2 21.2 0 100-42.5H63.8A63.9 63.9 0 000 64.6v382.8A63.9 63.9 0 0063.8 511H255a21.2 21.2 0 100-42.5z" />
             <path d="M505.7 240.9L376.4 113.3a21.3 21.3 0 10-29.9 30.3l92.4 91.1H191.4a21.2 21.2 0 100 42.6h247.5l-92.4 91.1a21.3 21.3 0 1029.9 30.3l129.3-127.6a21.3 21.3 0 000-30.2z" />{" "}
           </svg>
-        </div>
+        </div> */}
+           <Sidebar />
 
         <div>
           <div className="dashboard-box">
@@ -100,7 +102,6 @@ const Dashboard = ({ capturedtime }) => {
                   make sure that every actions are being logged into the back
                   end
                 </li>
-           
               </h1>
             </ul>
           </div>
