@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -14,8 +14,6 @@ const Login = () => {
   const navigate = useNavigate();
   let username = "admin";
   let password = "password";
-  const inputRef = useRef(null);
-  const buttonRef = useRef(null);
 
   const handleOpenPopup = () => {
     setShowPopup(true);
@@ -49,15 +47,19 @@ const Login = () => {
     }
   };
 
-  const handleEnterKey = (event) => {
-    if (event.key === 'Enter') {
-      buttonRef.current.click();
-    }
-  };
-
-  
-
- 
+  useEffect(() => {
+    const listener = (event) => {
+      if (event.code === "Enter") {
+        setLoggedIn(true);
+        event.preventDefault();
+        handleLogin();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <>
@@ -81,14 +83,11 @@ const Login = () => {
                 type={isEye}
                 className="form-input"
                 placeholder="*********"
-                ref={inputRef}
-                onKeyDown={handleEnterKey}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
             <div className="login-button-container">
-              <button type="button" className="form-btn"    ref={buttonRef}
- onClick={handleLogin}>
+              <button type="button" className="form-btn" onClick={handleLogin}>
                 <div className="login-button">Login</div>
               </button>
               <button type="button" className="eye-button" onClick={eye}>

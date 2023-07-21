@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Dashboard.css";
+import "./mycss.css";
 import Alerts from "./Alerts/Alerts";
 import Clock from "./Clock";
 import Sidebar from "./Sidebar";
@@ -32,7 +32,7 @@ const Dashboard = ({ capturedtime }) => {
   };
 
   return (
-    <div className="screen-bg">
+    <>
       <div class="wrapper ">
         {/* <div class="left-side">
           <svg
@@ -116,7 +116,7 @@ const Dashboard = ({ capturedtime }) => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
